@@ -6,7 +6,7 @@
 ## Usage
 ```javascript
 import Vue from 'vue';
-import VueEchartsComponents from 'vue-echarts-components';
+import VueEchartsComponents from '@shaonialife/vue-echarts-components';
 
 Vue.use(VueEchartsComponents);
 ```
