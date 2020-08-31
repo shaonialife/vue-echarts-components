@@ -1,6 +1,6 @@
 {
   "name": "@shaonialife/vue-echarts-components",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "echarts components for vue",
   "main": "index.js",
   "module": "dist/vue-echarts-components.esm.js",
@@ -16,7 +16,7 @@
     "update-readme": "node ./scripts/update-readme.js",
     "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "version": "yarn changelog && yarn update-readme && git add CHANGELOG.md README.*",
-    "release": "yarn test && npx bumpp --tag --commit --push && yarn publish --non-interactive && yarn release-gh",
+    "release": "yarn test && npx bumpp --tag --commit --push && yarn publish --non-interactive --access public && yarn release-gh",
     "release-gh": "conventional-github-releaser -p angular"
   },
   "keywords": [
