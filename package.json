@@ -2,6 +2,10 @@
   "name": "@shaonialife/vue-echarts-components",
   "version": "0.0.2",
   "description": "echarts components for vue",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shaonialife/vue-echarts-components.git"
+  },
   "main": "index.js",
   "module": "dist/vue-echarts-components.esm.js",
   "unpkg": "dist/vue-echarts-components.prod.js",
@@ -19,6 +23,10 @@
     "release": "yarn test && npx bumpp --tag --commit --push && yarn publish --non-interactive --access public && yarn release-gh",
     "release-gh": "conventional-github-releaser -p angular"
   },
+  "bugs": {
+    "url": "https://github.com/shaonialife/vue-echarts-components/issues"
+  },
+  "homepage": "https://github.com/shaonialife/vue-echarts-components#readme",
   "keywords": [
     "echarts",
     "vue"
