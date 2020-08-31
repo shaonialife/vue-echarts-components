@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Test ECharts</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="./echarts.min.js"></script>
+  <script src="../dist/vue-echarts-components.js"></script>
+</head>
+<body style="margin: 0">
+<div id="app"></div>
+<script id="template" type="text/x-template">
+  <div>
+    <vec-container
+      style="width: 100%; height: 100vh;"
+      :backgroundColor="color"
+    >
+      <vec-title
+        id="1"
+        text="这是标题"
+        :left="50"
+        :top="10"
+      />
+      <vec-title
+        id="2"
+        :text="title + '2'"
+        :left="10"
+        :top="distance"
+      />
+      <vec-title
+        id="3"
+        :key="key"
+        :text="title + '3'"
+        :right="10"
+        :bottom="distance"
+      />
+      <vec-grid
+        show
+        background-color="#fff"
+        left="20"
+        right="20"
+        top="20"
+        bottom="20"
+      >
+        <vec-x-axis :data="xAxis">
+          <vec-y-axis>
+            <vec-series-line :data="data1" />
+          </vec-y-axis>
+
+          <vec-y-axis>
+            <vec-series-line :data="data2" />
+          </vec-y-axis>
+        </vec-x-axis>
+      </vec-grid>
+    </vec-container>
+  </div>
+</script>
+
+<script>
+  Vue.use(VueEchartsComponents.default);
+
+  new Vue({
+    template: '#template',
+    el: '#app',
+    data() {
+      return {
+        idx: 0,
+        distance: 10,
+        key: 0,
+        r: 0,
+        g: 0,
+        b: 0,
+        data1: [],
+        data2: [],
+        xAxis: [],
+      };
+    },
+    computed: {
+      title() {
+        return `test-${this.idx}`;
+      },
+      color() {
+        return `rgb(${this.r}, ${this.g}, ${this.b})`
+      },
+    },
+    mounted() {
+      setInterval(() => {
+        this.idx += 1;
+        this.distance += 10;
+        if (this.distance > 350) {
+          this.distance = 10;
+          this.key += 1;
+        }
+      }, 2000)
+
+      setInterval(() => {
+        ['r', 'g', 'b'].forEach((key) => {
+          this[key] = Math.floor(Math.random() * 256)
+        });
+        if (this.xAxis.length < 20) {
+          this.xAxis.push(this.xAxis.length + 1);
+          this.data1.push(Math.floor(Math.random() * 500))
+          this.data2.push(Math.floor(Math.random() * 100))
+        }
+      }, 1000);
+    },
+  });
+</script>
+</body>
+</html>

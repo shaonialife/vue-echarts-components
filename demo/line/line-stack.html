@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>line simple</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="../echarts.min.js"></script>
+  <script src="../../dist/vue-echarts-components.js"></script>
+</head>
+<body style="margin: 0">
+<div id="app"></div>
+<script id="template" type="text/x-template">
+  <vec-container style="width: 100%; height: 100vh;">
+    <vec-title text="堆叠区域图" />
+    <vec-legend :data="['邮件营销', '联盟广告', '视频广告', '直接访问', '搜索引擎']" />
+    <vec-toolbox
+      :feature="{
+        saveAsImage: {},
+      }"
+    />
+    <vec-tooltip trigger="axis" />
+    <vec-grid
+      left="3%"
+      right="4%"
+      bottom="3%"
+      containLabel
+    >
+      <vec-x-axis
+        type="category"
+        :boundaryGap="false"
+        :data="['周一', '周二', '周三', '周四', '周五', '周六', '周日']"
+      >
+        <vec-y-axis type="value">
+          <vec-series-line
+            name="邮件营销"
+            stack="总量"
+            :data="[120, 132, 101, 134, 90, 230, 210]"
+          />
+          <vec-series-line
+            name="联盟广告"
+            stack="总量"
+            :data="[220, 182, 191, 234, 290, 330, 310]"
+          />
+          <vec-series-line
+            name="视频广告"
+            stack="总量"
+            :data="[150, 232, 201, 154, 190, 330, 410]"
+          />
+          <vec-series-line
+            name="直接访问"
+            stack="总量"
+            :data="[320, 332, 301, 334, 390, 330, 320]"
+          />
+          <vec-series-line
+            name="搜索引擎"
+            stack="总量"
+            :data="[820, 932, 901, 934, 1290, 1330, 1320]"
+          />
+        </vec-y-axis>
+      </vec-x-axis>
+    </vec-grid>
+  </vec-container>
+</script>
+
+<script>
+  Vue.use(VueEchartsComponents.default);
+
+  new Vue({
+    template: '#template',
+    el: '#app',
+  });
+</script>
+</body>
+</html>

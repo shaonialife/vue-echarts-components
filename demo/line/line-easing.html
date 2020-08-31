@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>line easing</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="../echarts.min.js"></script>
+  <script src="../../dist/vue-echarts-components.js"></script>
+</head>
+<body style="margin: 0">
+<div id="app"></div>
+<script id="template" type="text/x-template">
+  <vec-container style="width: 100%; height: 100vh;">
+    <vec-title
+      text="Different Easing Functions"
+      left="center"
+      top="bottom"
+    />
+
+    <template v-for="(grid, idx) in grids">
+      <vec-title
+        :key="'title-' + idx"
+        :left="grid.nameLeft"
+        :top="grid.top"
+        :text="grid.name"
+        text-align="center"
+        :text-style="{
+          fontSize: 12,
+          fontWeight: 'normal'
+        }"
+      />
+
+      <vec-grid
+        :key="'grid-' + idx"
+        show
+        background-color="#fff"
+        shadow-color="rgba(0, 0, 0, 0.3)"
+        :shadow-blur="2"
+        :border-width="0"
+        :left="grid.left"
+        :top="grid.top"
+        :width="grid.width"
+        :height="grid.height"
+      >
+        <vec-x-axis
+          type="value"
+          :show="false"
+          :min="0"
+          :max="1"
+        >
+          <vec-y-axis
+            type="value"
+            :show="false"
+            :min="-0.4"
+            :max="1.4"
+          >
+            <vec-series-line
+              :show-symbol="false"
+              :data="grid.data"
+              :animation-easing="grid.name"
+            />
+          </vec-y-axis>
+        </vec-x-axis>
+      </vec-grid>
+    </template>
+  </vec-container>
+</script>
+
+<script>
+  Vue.use(VueEchartsComponents.default);
+
+  const easingFuncs = {
+    linear: function (k) {
+      return k;
+    },
+    quadraticIn: function (k) {
+      return k * k;
+    },
+    quadraticOut: function (k) {
+      return k * (2 - k);
+    },
+    quadraticInOut: function (k) {
+      if ((k *= 2) < 1) { return 0.5 * k * k; }
+      return -0.5 * (--k * (k - 2) - 1);
+    },
+    cubicIn: function (k) {
+      return k * k * k;
+    },
+    cubicOut: function (k) {
+      return --k * k * k + 1;
+    },
+    cubicInOut: function (k) {
+      if ((k *= 2) < 1) { return 0.5 * k * k * k; }
+      return 0.5 * ((k -= 2) * k * k + 2);
+    },
+    quarticIn: function (k) {
+      return k * k * k * k;
+    },
+    quarticOut: function (k) {
+      return 1 - (--k * k * k * k);
+    },
+    quarticInOut: function (k) {
+      if ((k *= 2) < 1) { return 0.5 * k * k * k * k; }
+      return -0.5 * ((k -= 2) * k * k * k - 2);
+    },
+    quinticIn: function (k) {
+      return k * k * k * k * k;
+    },
+    quinticOut: function (k) {
+      return --k * k * k * k * k + 1;
+    },
+    quinticInOut: function (k) {
+      if ((k *= 2) < 1) { return 0.5 * k * k * k * k * k; }
+      return 0.5 * ((k -= 2) * k * k * k * k + 2);
+    },
+    sinusoidalIn: function (k) {
+      return 1 - Math.cos(k * Math.PI / 2);
+    },
+    sinusoidalOut: function (k) {
+      return Math.sin(k * Math.PI / 2);
+    },
+    sinusoidalInOut: function (k) {
+      return 0.5 * (1 - Math.cos(Math.PI * k));
+    },
+    exponentialIn: function (k) {
+      return k === 0 ? 0 : Math.pow(1024, k - 1);
+    },
+    exponentialOut: function (k) {
+      return k === 1 ? 1 : 1 - Math.pow(2, -10 * k);
+    },
+    exponentialInOut: function (k) {
+      if (k === 0) {
+        return 0;
+      }
+      if (k === 1) {
+        return 1;
+      }
+      if ((k *= 2) < 1) {
+        return 0.5 * Math.pow(1024, k - 1);
+      }
+      return 0.5 * (-Math.pow(2, -10 * (k - 1)) + 2);
+    },
+    circularIn: function (k) {
+      return 1 - Math.sqrt(1 - k * k);
+    },
+    circularOut: function (k) {
+      return Math.sqrt(1 - (--k * k));
+    },
+    circularInOut: function (k) {
+      if ((k *= 2) < 1) { return -0.5 * (Math.sqrt(1 - k * k) - 1); }
+      return 0.5 * (Math.sqrt(1 - (k -= 2) * k) + 1);
+    },
+    elasticIn: function (k) {
+      var s;
+      var a = 0.1;
+      var p = 0.4;
+      if (k === 0) { return 0; }
+      if (k === 1) { return 1; }
+      if (!a || a < 1) { a = 1; s = p / 4; }
+      else { s = p * Math.asin(1 / a) / (2 * Math.PI); }
+      return -(a * Math.pow(2, 10 * (k -= 1)) * Math.sin((k - s) * (2 * Math.PI) / p));
+    },
+    elasticOut: function (k) {
+      var s;
+      var a = 0.1;
+      var p = 0.4;
+      if (k === 0) { return 0; }
+      if (k === 1) { return 1; }
+      if (!a || a < 1) { a = 1; s = p / 4; }
+      else { s = p * Math.asin(1 / a) / (2 * Math.PI); }
+      return (a * Math.pow(2, -10 * k) * Math.sin((k - s) * (2 * Math.PI) / p) + 1);
+    },
+    elasticInOut: function (k) {
+      var s;
+      var a = 0.1;
+      var p = 0.4;
+      if (k === 0) { return 0; }
+      if (k === 1) { return 1; }
+      if (!a || a < 1) { a = 1; s = p / 4; }
+      else { s = p * Math.asin(1 / a) / (2 * Math.PI); }
+      if ((k *= 2) < 1) {
+        return -0.5 * (a * Math.pow(2, 10 * (k -= 1)) * Math.sin((k - s) * (2 * Math.PI) / p));
+      }
+      return a * Math.pow(2, -10 * (k -= 1)) * Math.sin((k - s) * (2 * Math.PI) / p) * 0.5 + 1;
+
+    },
+
+    // 在某一动画开始沿指示的路径进行动画处理前稍稍收回该动画的移动
+    backIn: function (k) {
+      var s = 1.70158;
+      return k * k * ((s + 1) * k - s);
+    },
+    backOut: function (k) {
+      var s = 1.70158;
+      return --k * k * ((s + 1) * k + s) + 1;
+    },
+    backInOut: function (k) {
+      var s = 1.70158 * 1.525;
+      if ((k *= 2) < 1) { return 0.5 * (k * k * ((s + 1) * k - s)); }
+      return 0.5 * ((k -= 2) * k * ((s + 1) * k + s) + 2);
+    },
+
+    // 创建弹跳效果
+    bounceIn: function (k) {
+      return 1 - easingFuncs.bounceOut(1 - k);
+    },
+    bounceOut: function (k) {
+      if (k < (1 / 2.75)) { return 7.5625 * k * k; }
+      else if (k < (2 / 2.75)) { return 7.5625 * (k -= (1.5 / 2.75)) * k + 0.75; }
+      else if (k < (2.5 / 2.75)) { return 7.5625 * (k -= (2.25 / 2.75)) * k + 0.9375; }
+      else { return 7.5625 * (k -= (2.625 / 2.75)) * k + 0.984375; }
+    },
+    bounceInOut: function (k) {
+      if (k < 0.5) { return easingFuncs.bounceIn(k * 2) * 0.5; }
+      return easingFuncs.bounceOut(k * 2 - 1) * 0.5 + 0.5;
+    }
+  };
+
+  const N_POINT = 30;
+
+  new Vue({
+    template: '#template',
+    el: '#app',
+    data() {
+      const names = Object.keys(easingFuncs);
+      const rowNumber = Math.ceil(Math.sqrt(names.length));
+
+      return {
+        grids: names.map((name, idx) => {
+          const data = [];
+          for (let i = 0; i <= N_POINT; i++) {
+            const x = i / N_POINT;
+            const y = easingFuncs[name](x);
+            data.push([x, y]);
+          }
+          const grid = {
+            name,
+            data,
+            left: ((idx % rowNumber) / rowNumber * 100 + 0.5) + '%',
+            top: (Math.floor(idx / rowNumber) / rowNumber * 100 + 0.5) + '%',
+            width: (1 / rowNumber * 100 - 1) + '%',
+            height: (1 / rowNumber * 100 - 1) + '%',
+          };
+          grid.nameLeft = parseFloat(grid.left) + parseFloat(grid.width) / 2 + '%';
+          return grid;
+        })
+      };
+    },
+  });
+</script>
+</body>
+</html>

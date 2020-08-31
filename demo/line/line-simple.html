@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>line simple</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="../echarts.min.js"></script>
+  <script src="../../dist/vue-echarts-components.js"></script>
+</head>
+<body style="margin: 0">
+<div id="app"></div>
+<script id="template" type="text/x-template">
+  <vec-container style="width: 100%; height: 100vh;">
+    <vec-x-axis
+      type="category"
+      :data="['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']"
+    />
+    <vec-y-axis
+      type="value"
+    />
+    <vec-series-line
+      :data="[820, 932, 901, 934, 1290, 1330, 1320]"
+    />
+  </vec-container>
+</script>
+
+<script>
+  Vue.use(VueEchartsComponents.default);
+
+  new Vue({
+    template: '#template',
+    el: '#app',
+  });
+</script>
+</body>
+</html>
