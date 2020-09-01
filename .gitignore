@@ -9,3 +9,7 @@ lib
 .rpt2_cache
 TODO.md
 typings
+
+# env files
+.env
+.env.*
