@@ -6,7 +6,7 @@ import size from '../mixins/size'
 import zlevel from '../mixins/zlevel'
 
 export default createComponent({
-  name: 'vec-toolbox',
+  name: 'VecToolbox',
 
   chartComponentName: 'toolbox',
 
@@ -14,7 +14,9 @@ export default createComponent({
 
   props: {
     show: Boolean,
-    orient: String as PropType<'horizontal' | 'vertical'>,
+    orient: {
+      type: String as PropType<'horizontal' | 'vertical'>,
+    },
     itemSize: Number,
     itemGap: Number,
     showTitle: Boolean,

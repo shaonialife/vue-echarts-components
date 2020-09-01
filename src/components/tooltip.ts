@@ -13,7 +13,7 @@ const supportTooltipComps = new Set([
 ])
 
 export default createComponent({
-  name: 'vec-tooltip',
+  name: 'VecTooltip',
 
   chartComponentName: 'tooltip',
 
@@ -30,29 +30,45 @@ export default createComponent({
       },
     },
     show: Boolean,
-    trigger: String as PropType<'item' | 'axis' | 'none'>,
-    axisPointer: Object as PropType<EChartOption.Tooltip.AxisPointer>,
+    trigger: {
+      type: String as PropType<'item' | 'axis' | 'none'>,
+    },
+    axisPointer: {
+      type: Object as PropType<EChartOption.Tooltip.AxisPointer>,
+    },
     showContent: Boolean,
     alwaysShowContent: Boolean,
-    triggerOn: String as PropType<
-      'mousemove' | 'click' | 'mousemove|click' | 'none'
-    >,
+    triggerOn: {
+      type: String as PropType<
+        'mousemove' | 'click' | 'mousemove|click' | 'none'
+      >,
+    },
     showDelay: Number,
     hideDelay: Number,
     enterable: Boolean,
-    renderMode: String as PropType<'html' | 'richText'>,
+    renderMode: {
+      type: String as PropType<'html' | 'richText'>,
+    },
     confine: Boolean,
     appendToBody: Boolean,
     transitionDuration: Boolean,
-    position: [String, Array, Function] as PropType<
-      EChartOption.Tooltip.Position.Type
-    >,
-    formatter: [String, Function] as PropType<
-      string | EChartOption.Tooltip.Formatter
-    >,
+    position: {
+      type: [String, Array, Function] as PropType<
+        EChartOption.Tooltip.Position.Type
+      >,
+    },
+    formatter: {
+      type: [String, Function] as PropType<
+        string | EChartOption.Tooltip.Formatter
+      >,
+    },
     backgroundColor: String,
-    padding: [Number, Array] as PropType<number | number[]>,
-    textStyle: Object as PropType<EChartOption.BaseTextStyle>,
+    padding: {
+      type: [Number, Array] as PropType<number | number[]>,
+    },
+    textStyle: {
+      type: Object as PropType<EChartOption.BaseTextStyle>,
+    },
     extraCssText: String,
   },
 
@@ -66,7 +82,7 @@ export default createComponent({
         ) {
           break
         }
-        if (parent.$options.name !== 'vec-container') {
+        if (parent.$options.name !== 'VecContainer') {
           parent = null
           break
         }

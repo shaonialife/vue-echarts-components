@@ -12,7 +12,7 @@ import { createComponent, mergeOption, debounce } from '../utils'
 import { PartOfOption, ChartChildComponent } from '../types'
 
 export default createComponent({
-  name: 'vec-container',
+  name: 'VecContainer',
 
   mixins: [animation, registrar],
 
@@ -32,7 +32,9 @@ export default createComponent({
       type: String,
       default: 'default',
     },
-    loadingOption: Object as PropType<EChartsLoadingOption>,
+    loadingOption: {
+      type: Object as PropType<EChartsLoadingOption>,
+    },
     group: String,
   },
 

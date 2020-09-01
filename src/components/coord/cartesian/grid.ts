@@ -10,7 +10,7 @@ import registrar from '../../../mixins/registrar'
 import { supportGridIndexComps } from '../../../configs'
 
 export default createComponent({
-  name: 'vec-grid',
+  name: 'VecGrid',
 
   chartComponentName: 'grid',
 

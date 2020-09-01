@@ -9,18 +9,26 @@ import shadow from '../mixins/shadow'
 import border from '../mixins/border'
 
 export default createComponent({
-  name: 'vec-legend',
+  name: 'VecLegend',
 
   chartComponentName: 'legend',
 
   mixins: [base, zlevel, position, size, shadow, border],
 
   props: {
-    type: String as PropType<'plain' | 'scroll'>,
+    type: {
+      type: String as PropType<'plain' | 'scroll'>,
+    },
     show: Boolean,
-    orient: String as PropType<'horizontal' | 'vertical'>,
-    align: String as PropType<'auto' | 'left' | 'right'>,
-    padding: [Number, Array] as PropType<number | number[]>,
+    orient: {
+      type: String as PropType<'horizontal' | 'vertical'>,
+    },
+    align: {
+      type: String as PropType<'auto' | 'left' | 'right'>,
+    },
+    padding: {
+      type: [Number, Array] as PropType<number | number[]>,
+    },
     itemGap: Number,
     itemWidth: Number,
     itemHeight: Number,
@@ -29,21 +37,37 @@ export default createComponent({
     selectedMode: [Boolean, String],
     inactiveColor: String,
     selected: Object,
-    textStyle: Object as PropType<EChartOption.TextStyleWithRich>,
+    textStyle: {
+      type: Object as PropType<EChartOption.TextStyleWithRich>,
+    },
     icon: String,
-    data: Array as PropType<string[] | EChartOption.Legend.LegendDataObject[]>,
+    data: {
+      type: Array as PropType<
+        string[] | EChartOption.Legend.LegendDataObject[]
+      >,
+    },
     backgroundColor: String,
     scrollDataIndex: Number,
     pageButtonItemGap: Number,
     pageButtonGap: Number,
-    pageButtonPosition: String as PropType<'start' | 'end'>,
-    pageFormatter: [String, Function] as PropType<
-      string | EChartOption.Legend.PageFormatter
-    >,
-    pageIcons: Object as PropType<EChartOption.Legend.PageIcons>,
+    pageButtonPosition: {
+      type: String as PropType<'start' | 'end'>,
+    },
+    pageFormatter: {
+      type: [String, Function] as PropType<
+        string | EChartOption.Legend.PageFormatter
+      >,
+    },
+    pageIcons: {
+      type: Object as PropType<EChartOption.Legend.PageIcons>,
+    },
     pageIconColor: String,
     pageIconInactiveColor: String,
-    pageIconSize: [Number, Array] as PropType<number | number[]>,
-    pageTextStyle: Object as PropType<EChartOption.TextStyle>,
+    pageIconSize: {
+      type: [Number, Array] as PropType<number | number[]>,
+    },
+    pageTextStyle: {
+      type: Object as PropType<EChartOption.TextStyle>,
+    },
   },
 })

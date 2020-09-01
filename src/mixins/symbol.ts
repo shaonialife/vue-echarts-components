@@ -6,8 +6,8 @@ export default {
     symbolSize: [Number, Array, Function],
     symbolRotate: [Number, Function],
     symbolKeepAspect: Boolean,
-    symbolOffset: (Array as unknown) as PropType<
-      [number | string, number | string]
-    >,
+    symbolOffset: {
+      type: (Array as unknown) as PropType<[number | string, number | string]>,
+    },
   },
 }

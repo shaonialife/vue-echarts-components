@@ -3,13 +3,15 @@ import { createComponent } from '../../../utils'
 import cartesianAxis from '../../../mixins/cartesianAxis'
 
 export default createComponent({
-  name: 'vec-y-axis',
+  name: 'VecYAxis',
 
   chartComponentName: 'yAxis',
 
   mixins: [cartesianAxis],
 
   props: {
-    position: String as PropType<'left' | 'right'>,
+    position: {
+      type: String as PropType<'left' | 'right'>,
+    },
   },
 })

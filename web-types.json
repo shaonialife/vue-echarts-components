@@ -1,0 +1,2139 @@
+{
+  "framework": "vue",
+  "name": "@shaonialife/vue-echarts-components",
+  "version": "0.0.6",
+  "contributions": {
+    "html": {
+      "description-markup": "markdown",
+      "types-syntax": "typescript",
+      "tags": [
+        {
+          "name": "VecContainer",
+          "description": "",
+          "attributes": [
+            {
+              "name": "animation",
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "animationThreshold",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "animationDuration",
+              "value": {
+                "kind": "expression",
+                "type": "number|func"
+              }
+            },
+            {
+              "name": "animationEasing",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "animationDelay",
+              "value": {
+                "kind": "expression",
+                "type": "number|func"
+              }
+            },
+            {
+              "name": "animationDurationUpdate",
+              "value": {
+                "kind": "expression",
+                "type": "number|func"
+              }
+            },
+            {
+              "name": "animationEasingUpdate",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "animationDelayUpdate",
+              "value": {
+                "kind": "expression",
+                "type": "number|func"
+              }
+            },
+            {
+              "name": "theme",
+              "value": {
+                "kind": "expression",
+                "type": "object|string"
+              }
+            },
+            {
+              "name": "devicePixelRatio",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "renderer",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "width",
+              "value": {
+                "kind": "expression",
+                "type": "string|number"
+              }
+            },
+            {
+              "name": "height",
+              "value": {
+                "kind": "expression",
+                "type": "string|number"
+              }
+            },
+            {
+              "name": "color",
+              "value": {
+                "kind": "expression",
+                "type": "array"
+              }
+            },
+            {
+              "name": "backgroundColor",
+              "value": {
+                "kind": "expression",
+                "type": "string|object"
+              }
+            },
+            {
+              "name": "blendMode",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "hoverLayerThreshold",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "useUtc",
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "loading",
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "loadingType",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              },
+              "default": "'default'"
+            },
+            {
+              "name": "loadingOption",
+              "value": {
+                "kind": "expression",
+                "type": "EChartsLoadingOption"
+              }
+            },
+            {
+              "name": "group",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            }
+          ],
+          "events": [
+            {
+              "name": "ready"
+            }
+          ],
+          "slots": [
+            {
+              "name": "default"
+            }
+          ],
+          "source": {
+            "module": "./src/components/container.ts",
+            "symbol": "default"
+          }
+        },
+        {
+          "name": "VecContainer",
+          "description": "",
+          "attributes": [
+            {
+              "name": "animation",
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "animationThreshold",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "animationDuration",
+              "value": {
+                "kind": "expression",
+                "type": "number|func"
+              }
+            },
+            {
+              "name": "animationEasing",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "animationDelay",
+              "value": {
+                "kind": "expression",
+                "type": "number|func"
+              }
+            },
+            {
+              "name": "animationDurationUpdate",
+              "value": {
+                "kind": "expression",
+                "type": "number|func"
+              }
+            },
+            {
+              "name": "animationEasingUpdate",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "animationDelayUpdate",
+              "value": {
+                "kind": "expression",
+                "type": "number|func"
+              }
+            },
+            {
+              "name": "theme",
+              "value": {
+                "kind": "expression",
+                "type": "object|string"
+              }
+            },
+            {
+              "name": "devicePixelRatio",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "renderer",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "width",
+              "value": {
+                "kind": "expression",
+                "type": "string|number"
+              }
+            },
+            {
+              "name": "height",
+              "value": {
+                "kind": "expression",
+                "type": "string|number"
+              }
+            },
+            {
+              "name": "color",
+              "value": {
+                "kind": "expression",
+                "type": "array"
+              }
+            },
+            {
+              "name": "backgroundColor",
+              "value": {
+                "kind": "expression",
+                "type": "string|object"
+              }
+            },
+            {
+              "name": "blendMode",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "hoverLayerThreshold",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "useUtc",
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "loading",
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "loadingType",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              },
+              "default": "'default'"
+            },
+            {
+              "name": "loadingOption",
+              "value": {
+                "kind": "expression",
+                "type": "EChartsLoadingOption"
+              }
+            },
+            {
+              "name": "group",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            }
+          ],
+          "events": [
+            {
+              "name": "ready"
+            }
+          ],
+          "slots": [
+            {
+              "name": "default"
+            }
+          ],
+          "source": {
+            "module": "./src/components/index.ts",
+            "symbol": "Container"
+          }
+        },
+        {
+          "name": "VecGrid",
+          "description": "",
+          "attributes": [
+            {
+              "name": "id",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              },
+              "default": "() => `vec-${getUid()}`"
+            },
+            {
+              "name": "zlevel",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "z",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "left",
+              "value": {
+                "kind": "expression",
+                "type": "number|string"
+              }
+            },
+            {
+              "name": "top",
+              "value": {
+                "kind": "expression",
+                "type": "number|string"
+              }
+            },
+            {
+              "name": "right",
+              "value": {
+                "kind": "expression",
+                "type": "number|string"
+              }
+            },
+            {
+              "name": "bottom",
+              "value": {
+                "kind": "expression",
+                "type": "number|string"
+              }
+            },
+            {
+              "name": "width",
+              "value": {
+                "kind": "expression",
+                "type": "string|number"
+              }
+            },
+            {
+              "name": "height",
+              "value": {
+                "kind": "expression",
+                "type": "string|number"
+              }
+            },
+            {
+              "name": "borderColor",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "borderWidth",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "shadowBlur",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "shadowColor",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "shadowOffsetX",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "shadowOffsetY",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "show",
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "containLabel",
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "backgroundColor",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            }
+          ],
+          "slots": [
+            {
+              "name": "default"
+            }
+          ],
+          "source": {
+            "module": "./src/components/coord/cartesian/grid.ts",
+            "symbol": "default"
+          }
+        },
+        {
+          "name": "VecLegend",
+          "description": "",
+          "attributes": [
+            {
+              "name": "id",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              },
+              "default": "() => `vec-${getUid()}`"
+            },
+            {
+              "name": "zlevel",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "z",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "left",
+              "value": {
+                "kind": "expression",
+                "type": "number|string"
+              }
+            },
+            {
+              "name": "top",
+              "value": {
+                "kind": "expression",
+                "type": "number|string"
+              }
+            },
+            {
+              "name": "right",
+              "value": {
+                "kind": "expression",
+                "type": "number|string"
+              }
+            },
+            {
+              "name": "bottom",
+              "value": {
+                "kind": "expression",
+                "type": "number|string"
+              }
+            },
+            {
+              "name": "width",
+              "value": {
+                "kind": "expression",
+                "type": "string|number"
+              }
+            },
+            {
+              "name": "height",
+              "value": {
+                "kind": "expression",
+                "type": "string|number"
+              }
+            },
+            {
+              "name": "shadowBlur",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "shadowColor",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "shadowOffsetX",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "shadowOffsetY",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "borderColor",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "borderWidth",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "type",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "show",
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "orient",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "align",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "padding",
+              "value": {
+                "kind": "expression",
+                "type": "number | number[]"
+              }
+            },
+            {
+              "name": "itemGap",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "itemWidth",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "itemHeight",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "symbolKeepAspect",
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "formatter",
+              "value": {
+                "kind": "expression",
+                "type": "string|func"
+              }
+            },
+            {
+              "name": "selectedMode",
+              "value": {
+                "kind": "expression",
+                "type": "boolean|string"
+              }
+            },
+            {
+              "name": "inactiveColor",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "selected",
+              "value": {
+                "kind": "expression",
+                "type": "object"
+              }
+            },
+            {
+              "name": "textStyle",
+              "value": {
+                "kind": "expression",
+                "type": "EChartOption.TextStyleWithRich"
+              }
+            },
+            {
+              "name": "icon",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "data",
+              "value": {
+                "kind": "expression",
+                "type": "string[] | EChartOption.Legend.LegendDataObject[]"
+              }
+            },
+            {
+              "name": "backgroundColor",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "scrollDataIndex",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "pageButtonItemGap",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "pageButtonGap",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "pageButtonPosition",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "pageFormatter",
+              "value": {
+                "kind": "expression",
+                "type": "string | EChartOption.Legend.PageFormatter"
+              }
+            },
+            {
+              "name": "pageIcons",
+              "value": {
+                "kind": "expression",
+                "type": "EChartOption.Legend.PageIcons"
+              }
+            },
+            {
+              "name": "pageIconColor",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "pageIconInactiveColor",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "pageIconSize",
+              "value": {
+                "kind": "expression",
+                "type": "number | number[]"
+              }
+            },
+            {
+              "name": "pageTextStyle",
+              "value": {
+                "kind": "expression",
+                "type": "EChartOption.TextStyle"
+              }
+            }
+          ],
+          "slots": [
+            {
+              "name": "default"
+            }
+          ],
+          "source": {
+            "module": "./src/components/legend.ts",
+            "symbol": "default"
+          }
+        },
+        {
+          "name": "VecSeriesLine",
+          "description": "",
+          "attributes": [
+            {
+              "name": "zlevel",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "z",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "name",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "data",
+              "value": {
+                "kind": "expression",
+                "type": "array"
+              }
+            },
+            {
+              "name": "silent",
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "animation",
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "animationThreshold",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "animationDuration",
+              "value": {
+                "kind": "expression",
+                "type": "number|func"
+              }
+            },
+            {
+              "name": "animationEasing",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "animationDelay",
+              "value": {
+                "kind": "expression",
+                "type": "number|func"
+              }
+            },
+            {
+              "name": "animationDurationUpdate",
+              "value": {
+                "kind": "expression",
+                "type": "number|func"
+              }
+            },
+            {
+              "name": "animationEasingUpdate",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "animationDelayUpdate",
+              "value": {
+                "kind": "expression",
+                "type": "number|func"
+              }
+            },
+            {
+              "name": "symbol",
+              "value": {
+                "kind": "expression",
+                "type": "string|func"
+              }
+            },
+            {
+              "name": "symbolSize",
+              "value": {
+                "kind": "expression",
+                "type": "number|array|func"
+              }
+            },
+            {
+              "name": "symbolRotate",
+              "value": {
+                "kind": "expression",
+                "type": "number|func"
+              }
+            },
+            {
+              "name": "symbolKeepAspect",
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "symbolOffset",
+              "value": {
+                "kind": "expression",
+                "type": "[number | string, number | string]"
+              }
+            },
+            {
+              "name": "coordinateSystem",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "xAxisIndex",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "yAxisIndex",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "polarIndex",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "showSymbol",
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "showAllSymbol",
+              "value": {
+                "kind": "expression",
+                "type": "boolean | 'auto'"
+              }
+            },
+            {
+              "name": "hoverAnimation",
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "legendHoverLink",
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "stack",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "cursor",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "connectNulls",
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "clip",
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "step",
+              "value": {
+                "kind": "expression",
+                "type": "boolean | 'start' | 'middle' | 'end'"
+              }
+            },
+            {
+              "name": "label",
+              "value": {
+                "kind": "expression",
+                "type": "object"
+              }
+            },
+            {
+              "name": "itemStyle",
+              "value": {
+                "kind": "expression",
+                "type": "object"
+              }
+            },
+            {
+              "name": "lineStyle",
+              "value": {
+                "kind": "expression",
+                "type": "object"
+              }
+            },
+            {
+              "name": "areaStyle",
+              "value": {
+                "kind": "expression",
+                "type": "object"
+              }
+            },
+            {
+              "name": "emphasis",
+              "value": {
+                "kind": "expression",
+                "type": "object"
+              }
+            },
+            {
+              "name": "smooth",
+              "value": {
+                "kind": "expression",
+                "type": "boolean|number"
+              }
+            },
+            {
+              "name": "smoothMonotone",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "sampling",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "dimensions",
+              "value": {
+                "kind": "expression",
+                "type": "array"
+              }
+            },
+            {
+              "name": "encode",
+              "value": {
+                "kind": "expression",
+                "type": "object"
+              }
+            },
+            {
+              "name": "seriesLayoutBy",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "datasetIndex",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "markPoint",
+              "value": {
+                "kind": "expression",
+                "type": "object"
+              }
+            },
+            {
+              "name": "markLine",
+              "value": {
+                "kind": "expression",
+                "type": "object"
+              }
+            },
+            {
+              "name": "markArea",
+              "value": {
+                "kind": "expression",
+                "type": "object"
+              }
+            }
+          ],
+          "source": {
+            "module": "./src/components/chart/line.ts",
+            "symbol": "default"
+          }
+        },
+        {
+          "name": "VecTitle",
+          "description": "",
+          "attributes": [
+            {
+              "name": "id",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              },
+              "default": "() => `vec-${getUid()}`"
+            },
+            {
+              "name": "zlevel",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "z",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "left",
+              "value": {
+                "kind": "expression",
+                "type": "number|string"
+              }
+            },
+            {
+              "name": "top",
+              "value": {
+                "kind": "expression",
+                "type": "number|string"
+              }
+            },
+            {
+              "name": "right",
+              "value": {
+                "kind": "expression",
+                "type": "number|string"
+              }
+            },
+            {
+              "name": "bottom",
+              "value": {
+                "kind": "expression",
+                "type": "number|string"
+              }
+            },
+            {
+              "name": "borderColor",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "borderWidth",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "shadowBlur",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "shadowColor",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "shadowOffsetX",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "shadowOffsetY",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "show",
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "text",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "link",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "target",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "textStyle",
+              "value": {
+                "kind": "expression",
+                "type": "EChartOption.TextStyleWithRich"
+              }
+            },
+            {
+              "name": "subtext",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "sublink",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "subtarget",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "subtextStyle",
+              "value": {
+                "kind": "expression",
+                "type": "EChartOption.TextStyleWithRich"
+              }
+            },
+            {
+              "name": "textAlign",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "textVerticalAlign",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "triggerEvent",
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "padding",
+              "value": {
+                "kind": "expression",
+                "type": "number | number[]"
+              }
+            },
+            {
+              "name": "itemGap",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "backgroundColor",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "borderRadius",
+              "value": {
+                "kind": "expression",
+                "type": "number | number[]"
+              }
+            }
+          ],
+          "slots": [
+            {
+              "name": "default"
+            }
+          ],
+          "source": {
+            "module": "./src/components/title.ts",
+            "symbol": "default"
+          }
+        },
+        {
+          "name": "VecToolbox",
+          "description": "",
+          "attributes": [
+            {
+              "name": "id",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              },
+              "default": "() => `vec-${getUid()}`"
+            },
+            {
+              "name": "left",
+              "value": {
+                "kind": "expression",
+                "type": "number|string"
+              }
+            },
+            {
+              "name": "top",
+              "value": {
+                "kind": "expression",
+                "type": "number|string"
+              }
+            },
+            {
+              "name": "right",
+              "value": {
+                "kind": "expression",
+                "type": "number|string"
+              }
+            },
+            {
+              "name": "bottom",
+              "value": {
+                "kind": "expression",
+                "type": "number|string"
+              }
+            },
+            {
+              "name": "width",
+              "value": {
+                "kind": "expression",
+                "type": "string|number"
+              }
+            },
+            {
+              "name": "height",
+              "value": {
+                "kind": "expression",
+                "type": "string|number"
+              }
+            },
+            {
+              "name": "zlevel",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "z",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "show",
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "orient",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "itemSize",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "itemGap",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "showTitle",
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "feature",
+              "value": {
+                "kind": "expression",
+                "type": "object"
+              }
+            },
+            {
+              "name": "iconStyle",
+              "value": {
+                "kind": "expression",
+                "type": "object"
+              }
+            },
+            {
+              "name": "emphasis",
+              "value": {
+                "kind": "expression",
+                "type": "object"
+              }
+            }
+          ],
+          "slots": [
+            {
+              "name": "default"
+            }
+          ],
+          "source": {
+            "module": "./src/components/toolbox.ts",
+            "symbol": "default"
+          }
+        },
+        {
+          "name": "VecTooltip",
+          "description": "",
+          "attributes": [
+            {
+              "name": "id",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              },
+              "default": "() => `vec-${getUid()}`"
+            },
+            {
+              "name": "borderColor",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "borderWidth",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "show",
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "trigger",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "axisPointer",
+              "value": {
+                "kind": "expression",
+                "type": "EChartOption.Tooltip.AxisPointer"
+              }
+            },
+            {
+              "name": "showContent",
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "alwaysShowContent",
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "triggerOn",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "showDelay",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "hideDelay",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "enterable",
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "renderMode",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "confine",
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "appendToBody",
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "transitionDuration",
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "position",
+              "value": {
+                "kind": "expression",
+                "type": "EChartOption.Tooltip.Position.Type"
+              }
+            },
+            {
+              "name": "formatter",
+              "value": {
+                "kind": "expression",
+                "type": "string | EChartOption.Tooltip.Formatter"
+              }
+            },
+            {
+              "name": "backgroundColor",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "padding",
+              "value": {
+                "kind": "expression",
+                "type": "number | number[]"
+              }
+            },
+            {
+              "name": "textStyle",
+              "value": {
+                "kind": "expression",
+                "type": "EChartOption.BaseTextStyle"
+              }
+            },
+            {
+              "name": "extraCssText",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            }
+          ],
+          "slots": [
+            {
+              "name": "default"
+            }
+          ],
+          "source": {
+            "module": "./src/components/tooltip.ts",
+            "symbol": "default"
+          }
+        },
+        {
+          "name": "VecXAxis",
+          "description": "",
+          "attributes": [
+            {
+              "name": "zlevel",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "z",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "show",
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "gridIndex",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "offset",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "type",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "name",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "nameLocation",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "nameTextStyle",
+              "value": {
+                "kind": "expression",
+                "type": "EChartOption.TextStyleWithRich"
+              }
+            },
+            {
+              "name": "nameGap",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "nameRotate",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "inverse",
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "boundaryGap",
+              "value": {
+                "kind": "expression",
+                "type": "boolean | [string | number, string | number]"
+              }
+            },
+            {
+              "name": "min",
+              "value": {
+                "kind": "expression",
+                "type": "string|number|func"
+              }
+            },
+            {
+              "name": "max",
+              "value": {
+                "kind": "expression",
+                "type": "string|number|func"
+              }
+            },
+            {
+              "name": "scale",
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "splitNumber",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "minInterval",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "maxInterval",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "interval",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "logBase",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "silent",
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "triggerEvent",
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "axisLine",
+              "value": {
+                "kind": "expression",
+                "type": "EChartOption.BasicComponents.Line"
+              }
+            },
+            {
+              "name": "axisTick",
+              "value": {
+                "kind": "expression",
+                "type": "EChartOption.BasicComponents.CartesianAxis.Tick"
+              }
+            },
+            {
+              "name": "minorTick",
+              "value": {
+                "kind": "expression",
+                "type": "EChartOption.BasicComponents.CartesianAxis.MinorTick"
+              }
+            },
+            {
+              "name": "axisLabel",
+              "value": {
+                "kind": "expression",
+                "type": "EChartOption.BasicComponents.CartesianAxis.Label"
+              }
+            },
+            {
+              "name": "minorSplitLine",
+              "value": {
+                "kind": "expression",
+                "type": "EChartOption.BasicComponents.CartesianAxis.MinorSplitLine"
+              }
+            },
+            {
+              "name": "splitArea",
+              "value": {
+                "kind": "expression",
+                "type": "EChartOption.BasicComponents.CartesianAxis.SplitArea"
+              }
+            },
+            {
+              "name": "data",
+              "value": {
+                "kind": "expression",
+                "type": "(\n  | string\n  | number\n  | EChartOption.BasicComponents.CartesianAxis.DataObject\n)[]"
+              }
+            },
+            {
+              "name": "axisPointer",
+              "value": {
+                "kind": "expression",
+                "type": "EChartOption.BasicComponents.CartesianAxis.Pointer"
+              }
+            },
+            {
+              "name": "position",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            }
+          ],
+          "source": {
+            "module": "./src/components/coord/cartesian/xAxis.ts",
+            "symbol": "default"
+          }
+        },
+        {
+          "name": "VecYAxis",
+          "description": "",
+          "attributes": [
+            {
+              "name": "zlevel",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "z",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "show",
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "gridIndex",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "offset",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "type",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "name",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "nameLocation",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "nameTextStyle",
+              "value": {
+                "kind": "expression",
+                "type": "EChartOption.TextStyleWithRich"
+              }
+            },
+            {
+              "name": "nameGap",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "nameRotate",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "inverse",
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "boundaryGap",
+              "value": {
+                "kind": "expression",
+                "type": "boolean | [string | number, string | number]"
+              }
+            },
+            {
+              "name": "min",
+              "value": {
+                "kind": "expression",
+                "type": "string|number|func"
+              }
+            },
+            {
+              "name": "max",
+              "value": {
+                "kind": "expression",
+                "type": "string|number|func"
+              }
+            },
+            {
+              "name": "scale",
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "splitNumber",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "minInterval",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "maxInterval",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "interval",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "logBase",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "silent",
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "triggerEvent",
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "axisLine",
+              "value": {
+                "kind": "expression",
+                "type": "EChartOption.BasicComponents.Line"
+              }
+            },
+            {
+              "name": "axisTick",
+              "value": {
+                "kind": "expression",
+                "type": "EChartOption.BasicComponents.CartesianAxis.Tick"
+              }
+            },
+            {
+              "name": "minorTick",
+              "value": {
+                "kind": "expression",
+                "type": "EChartOption.BasicComponents.CartesianAxis.MinorTick"
+              }
+            },
+            {
+              "name": "axisLabel",
+              "value": {
+                "kind": "expression",
+                "type": "EChartOption.BasicComponents.CartesianAxis.Label"
+              }
+            },
+            {
+              "name": "minorSplitLine",
+              "value": {
+                "kind": "expression",
+                "type": "EChartOption.BasicComponents.CartesianAxis.MinorSplitLine"
+              }
+            },
+            {
+              "name": "splitArea",
+              "value": {
+                "kind": "expression",
+                "type": "EChartOption.BasicComponents.CartesianAxis.SplitArea"
+              }
+            },
+            {
+              "name": "data",
+              "value": {
+                "kind": "expression",
+                "type": "(\n  | string\n  | number\n  | EChartOption.BasicComponents.CartesianAxis.DataObject\n)[]"
+              }
+            },
+            {
+              "name": "axisPointer",
+              "value": {
+                "kind": "expression",
+                "type": "EChartOption.BasicComponents.CartesianAxis.Pointer"
+              }
+            },
+            {
+              "name": "position",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            }
+          ],
+          "source": {
+            "module": "./src/components/coord/cartesian/yAxis.ts",
+            "symbol": "default"
+          }
+        }
+      ]
+    }
+  }
+}

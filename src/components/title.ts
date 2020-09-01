@@ -8,7 +8,7 @@ import shadow from '../mixins/shadow'
 import { createComponent } from '../utils'
 
 export default createComponent({
-  name: 'vec-title',
+  name: 'VecTitle',
 
   chartComponentName: 'title',
 
@@ -19,17 +19,25 @@ export default createComponent({
     text: String,
     link: String,
     target: String,
-    textStyle: Object as PropType<EChartOption.TextStyleWithRich>,
+    textStyle: {
+      type: Object as PropType<EChartOption.TextStyleWithRich>,
+    },
     subtext: String,
     sublink: String,
     subtarget: String,
-    subtextStyle: Object as PropType<EChartOption.TextStyleWithRich>,
+    subtextStyle: {
+      type: Object as PropType<EChartOption.TextStyleWithRich>,
+    },
     textAlign: String,
     textVerticalAlign: String,
     triggerEvent: Boolean,
-    padding: [Number, Array] as PropType<number | number[]>,
+    padding: {
+      type: [Number, Array] as PropType<number | number[]>,
+    },
     itemGap: Number,
     backgroundColor: String,
-    borderRadius: [Number, Array] as PropType<number | number[]>,
+    borderRadius: {
+      type: [Number, Array] as PropType<number | number[]>,
+    },
   },
 })

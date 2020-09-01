@@ -13,16 +13,24 @@ export default {
     show: Boolean,
     gridIndex: Number,
     offset: Number,
-    type: String as PropType<'value' | 'category' | 'time' | 'log'>,
+    type: {
+      type: String as PropType<'value' | 'category' | 'time' | 'log'>,
+    },
     name: String,
-    nameLocation: String as PropType<'start' | 'center' | 'middle' | 'end'>,
-    nameTextStyle: Object as PropType<EChartOption.TextStyleWithRich>,
+    nameLocation: {
+      type: String as PropType<'start' | 'center' | 'middle' | 'end'>,
+    },
+    nameTextStyle: {
+      type: Object as PropType<EChartOption.TextStyleWithRich>,
+    },
     nameGap: Number,
     nameRotate: Number,
     inverse: Boolean,
-    boundaryGap: [Boolean, Array] as PropType<
-      boolean | [string | number, string | number]
-    >,
+    boundaryGap: {
+      type: [Boolean, Array] as PropType<
+        boolean | [string | number, string | number]
+      >,
+    },
     min: [String, Number, Function],
     max: [String, Number, Function],
     scale: Boolean,
@@ -33,32 +41,46 @@ export default {
     logBase: Number,
     silent: Boolean,
     triggerEvent: Boolean,
-    axisLine: Object as PropType<EChartOption.BasicComponents.Line>,
-    axisTick: Object as PropType<
-      EChartOption.BasicComponents.CartesianAxis.Tick
-    >,
-    minorTick: Object as PropType<
-      EChartOption.BasicComponents.CartesianAxis.MinorTick
-    >,
-    axisLabel: Object as PropType<
-      EChartOption.BasicComponents.CartesianAxis.Label
-    >,
-    minorSplitLine: Object as PropType<
-      EChartOption.BasicComponents.CartesianAxis.MinorSplitLine
-    >,
-    splitArea: Object as PropType<
-      EChartOption.BasicComponents.CartesianAxis.SplitArea
-    >,
-    data: Array as PropType<
-      (
-        | string
-        | number
-        | EChartOption.BasicComponents.CartesianAxis.DataObject
-      )[]
-    >,
-    axisPointer: Object as PropType<
-      EChartOption.BasicComponents.CartesianAxis.Pointer
-    >,
+    axisLine: {
+      type: Object as PropType<EChartOption.BasicComponents.Line>,
+    },
+    axisTick: {
+      type: Object as PropType<EChartOption.BasicComponents.CartesianAxis.Tick>,
+    },
+    minorTick: {
+      type: Object as PropType<
+        EChartOption.BasicComponents.CartesianAxis.MinorTick
+      >,
+    },
+    axisLabel: {
+      type: Object as PropType<
+        EChartOption.BasicComponents.CartesianAxis.Label
+      >,
+    },
+    minorSplitLine: {
+      type: Object as PropType<
+        EChartOption.BasicComponents.CartesianAxis.MinorSplitLine
+      >,
+    },
+    splitArea: {
+      type: Object as PropType<
+        EChartOption.BasicComponents.CartesianAxis.SplitArea
+      >,
+    },
+    data: {
+      type: Array as PropType<
+        (
+          | string
+          | number
+          | EChartOption.BasicComponents.CartesianAxis.DataObject
+        )[]
+      >,
+    },
+    axisPointer: {
+      type: Object as PropType<
+        EChartOption.BasicComponents.CartesianAxis.Pointer
+      >,
+    },
   },
 
   methods: {
