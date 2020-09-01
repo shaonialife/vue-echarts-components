@@ -169,6 +169,12 @@ export default createComponent({
     }
 
     this.ready = true
+
+    /**
+     * ready event.
+     * @event ready
+     * @property {ECharts} instance
+     */
     this.$emit('ready', this.$chartInstance)
 
     this.$watch(

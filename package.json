@@ -40,6 +40,7 @@
   "sideEffects": false,
   "files": [
     "dist",
+    "src",
     "index.js",
     "web-types.json"
   ],

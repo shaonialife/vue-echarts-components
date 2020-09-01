@@ -1,7 +1,7 @@
 {
   "framework": "vue",
   "name": "@shaonialife/vue-echarts-components",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "contributions": {
     "html": {
       "description-markup": "markdown",
@@ -169,7 +169,8 @@
           ],
           "events": [
             {
-              "name": "ready"
+              "name": "ready",
+              "description": "ready event."
             }
           ],
           "slots": [
@@ -344,7 +345,8 @@
           ],
           "events": [
             {
-              "name": "ready"
+              "name": "ready",
+              "description": "ready event."
             }
           ],
           "slots": [
