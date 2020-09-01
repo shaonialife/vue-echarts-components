@@ -1,6 +1,6 @@
 {
   "name": "@shaonialife/vue-echarts-components",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "echarts components for vue",
   "repository": {
     "type": "git",
@@ -10,7 +10,7 @@
   "module": "dist/vue-echarts-components.esm.js",
   "unpkg": "dist/vue-echarts-components.prod.js",
   "jsdelivr": "dist/vue-echarts-components.prod.js",
-  "typings": "dist/index.d.ts",
+  "typings": "typings/index.d.ts",
   "scripts": {
     "start": "concurrently \"tsc --emitDeclarationOnly -w\" \"cross-env rollup -c -w\"",
     "build": "rimraf dist typings && tsc --emitDeclarationOnly && rollup -c",
@@ -38,6 +38,7 @@
   "license": "MIT",
   "sideEffects": false,
   "files": [
+    "typings",
     "dist",
     "index.js"
   ],
