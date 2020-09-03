@@ -102,17 +102,16 @@ export function debounce<F extends (this: any, ...args: any[]) => void>(
     newestCtx = this
     newestArgs = args
 
-    if (timeoutId === undefined) {
-      timeoutId = setTimeout(() => {
-        const ctx = newestCtx
-        const args = newestArgs
+    clearTimeout(timeoutId)
 
-        timeoutId = undefined
-        newestCtx = undefined
-        newestArgs = undefined
+    timeoutId = setTimeout(() => {
+      const ctx = newestCtx
+      const args = newestArgs
 
-        func.apply(ctx, args!)
-      }, ms)
-    }
+      newestCtx = undefined
+      newestArgs = undefined
+
+      func.apply(ctx, args!)
+    }, ms)
   } as F
 }

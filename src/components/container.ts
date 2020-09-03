@@ -6,6 +6,7 @@ import {
   EChartsResizeOption,
   EChartsLoadingOption,
 } from 'echarts'
+import { addListener, removeListener } from 'resize-detector'
 import animation from '../mixins/animation'
 import registrar from '../mixins/registrar'
 import { createComponent, mergeOption, debounce } from '../utils'
@@ -36,6 +37,10 @@ export default createComponent({
       type: Object as PropType<EChartsLoadingOption>,
     },
     group: String,
+    autoresize: {
+      type: Boolean,
+      default: true,
+    },
   },
 
   data() {
@@ -86,6 +91,18 @@ export default createComponent({
       }
     },
 
+    autoresize(val: boolean) {
+      if (!this.$el) {
+        return
+      }
+
+      removeListener(this.$el as HTMLDivElement, (this as any).__resizeHandler)
+
+      if (val) {
+        addListener(this.$el as HTMLDivElement, (this as any).__resizeHandler)
+      }
+    },
+
     baseOption(option: EChartOption) {
       this.setOption(option)
     },
@@ -101,6 +118,7 @@ export default createComponent({
         const fullyUpdate = this.$isFullyUpdate || res === this.$fullOption
 
         if (fullyUpdate) {
+          // 在全量更新中 res 就是 this.$fullOption
           this.childComponents.forEach(
             (childComponent: ChartChildComponent) => {
               childComponent.afterMergeOption(this.$fullOption)
@@ -193,6 +211,21 @@ export default createComponent({
       },
       { immediate: true }
     )
+    ;(this as any).__resizeHandler = debounce(() => {
+      if (this.autoresize) {
+        this.resize()
+      }
+    }, 200)
+
+    if (this.autoresize) {
+      addListener(this.$el as HTMLDivElement, (this as any).__resizeHandler)
+    }
+  },
+
+  activated() {
+    if (this.autoresize) {
+      this.resize()
+    }
   },
 
   beforeDestroy() {
@@ -200,6 +233,8 @@ export default createComponent({
       this.$chartInstance.dispose()
       this.$chartInstance = null
     }
+
+    removeListener(this.$el as HTMLDivElement, (this as any).__resizeHandler)
   },
 
   methods: {

@@ -80,6 +80,7 @@
     "vue": ">= 2.5 < 3"
   },
   "dependencies": {
+    "resize-detector": "^0.2.2",
     "tslib": "^2.0.1"
   },
   "husky": {
