@@ -1,7 +1,7 @@
 {
   "framework": "vue",
   "name": "@shaonialife/vue-echarts-components",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "contributions": {
     "html": {
       "description-markup": "markdown",
@@ -1693,6 +1693,13 @@
               }
             },
             {
+              "name": "splitLine",
+              "value": {
+                "kind": "expression",
+                "type": "EChartOption.BasicComponents.CartesianAxis.SplitLine"
+              }
+            },
+            {
               "name": "minorSplitLine",
               "value": {
                 "kind": "expression",
@@ -1924,6 +1931,13 @@
               "value": {
                 "kind": "expression",
                 "type": "EChartOption.BasicComponents.CartesianAxis.Label"
+              }
+            },
+            {
+              "name": "splitLine",
+              "value": {
+                "kind": "expression",
+                "type": "EChartOption.BasicComponents.CartesianAxis.SplitLine"
               }
             },
             {
