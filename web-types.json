@@ -1,7 +1,7 @@
 {
   "framework": "vue",
   "name": "@shaonialife/vue-echarts-components",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "contributions": {
     "html": {
       "description-markup": "markdown",
@@ -165,6 +165,14 @@
                 "kind": "expression",
                 "type": "string"
               }
+            },
+            {
+              "name": "autoresize",
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              },
+              "default": "true"
             }
           ],
           "events": [
