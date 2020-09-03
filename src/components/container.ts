@@ -231,15 +231,15 @@ export default createComponent({
     },
 
     getWidth() {
-      this.$chartInstance?.getWidth()
+      return this.$chartInstance?.getWidth() ?? 0
     },
 
     getHeight() {
-      this.$chartInstance?.getHeight()
+      return this.$chartInstance?.getHeight() ?? 0
     },
 
     getDom() {
-      this.$chartInstance?.getDom()
+      return this.$chartInstance?.getDom()
     },
   },
 

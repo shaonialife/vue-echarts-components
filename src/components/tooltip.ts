@@ -4,13 +4,15 @@ import { createComponent, removeUndefined } from '../utils'
 import base from '../mixins/base'
 import border from '../mixins/border'
 
-const supportTooltipComps = new Set([
-  'legend',
-  'grid',
-  'polar',
-  'toolbox',
-  'singleAxis',
-])
+/*
+ * 支持 tooltip 的组件有:
+ * legend
+ * grid
+ * polar
+ * toolbox
+ * singleAxis
+ * 各个系列图标
+ */
 
 export default createComponent({
   name: 'VecTooltip',
@@ -72,47 +74,17 @@ export default createComponent({
     extraCssText: String,
   },
 
-  computed: {
-    tooltipParent() {
-      let parent = this.$parent as any
-      while (parent) {
-        if (
-          parent.isSeries ||
-          supportTooltipComps.has(parent.$options.chartComponentName)
-        ) {
-          break
-        }
-        if (parent.$options.name !== 'VecContainer') {
-          parent = null
-          break
-        }
-        parent = parent.$parent
-      }
-      return parent
-    },
-
-    tooltipParentName(this: any) {
-      if (this.tooltipParent) {
-        return this.tooltipParent.isSeries
-          ? 'series'
-          : this.tooltipParent.$options.chartComponentName
-      }
-      return ''
+  inject: {
+    transformTooltipOptions: {
+      default: null,
     },
   },
 
   methods: {
-    getSubOption() {
+    getSubOption(this: any) {
       const tooltip = removeUndefined(this.$props)
-      if (this.tooltipParent) {
-        return {
-          [this.tooltipParentName]: [
-            {
-              id: this.tooltipParent.id,
-              tooltip,
-            },
-          ],
-        }
+      if (this.transformTooltipOptions) {
+        return this.transformTooltipOptions(tooltip)
       }
       return {
         tooltip,
@@ -120,15 +92,8 @@ export default createComponent({
     },
 
     onPropsUpdated(this: any, props: Record<string, any>) {
-      if (this.tooltipParent) {
-        this.setOption({
-          [this.tooltipParentName]: [
-            {
-              id: this.tooltipParent.id,
-              tooltip: props,
-            },
-          ],
-        })
+      if (this.transformTooltipOptions) {
+        this.setOption(this.transformTooltipOptions(props))
       } else {
         this.setOption({
           tooltip: props as any,

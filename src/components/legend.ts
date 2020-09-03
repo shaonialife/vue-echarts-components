@@ -7,13 +7,14 @@ import position from '../mixins/position'
 import size from '../mixins/size'
 import shadow from '../mixins/shadow'
 import border from '../mixins/border'
+import tooltipParent from '../mixins/tooltipParent'
 
 export default createComponent({
   name: 'VecLegend',
 
   chartComponentName: 'legend',
 
-  mixins: [base, zlevel, position, size, shadow, border],
+  mixins: [base, zlevel, position, size, shadow, border, tooltipParent],
 
   props: {
     type: {

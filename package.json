@@ -1,6 +1,6 @@
 {
   "name": "@shaonialife/vue-echarts-components",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "echarts components for vue",
   "repository": {
     "type": "git",
@@ -58,6 +58,7 @@
     "cross-env": "^7.0.2",
     "dotenv": "^8.2.0",
     "echarts": "^4.8.0",
+    "glob": "^7.1.6",
     "husky": "^4.2.5",
     "jest": "^26.3.0",
     "lint-staged": "^10.2.11",

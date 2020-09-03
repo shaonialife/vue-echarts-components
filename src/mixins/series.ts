@@ -1,9 +1,10 @@
 import { removeUndefined } from '../utils'
 import base from './base'
 import zlevel from './zlevel'
+import tooltipParent from './tooltipParent'
 
 export default {
-  mixins: [base, zlevel],
+  mixins: [base, zlevel, tooltipParent],
 
   props: {
     name: String,

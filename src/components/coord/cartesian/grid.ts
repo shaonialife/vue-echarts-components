@@ -7,6 +7,7 @@ import size from '../../../mixins/size'
 import border from '../../../mixins/border'
 import shadow from '../../../mixins/shadow'
 import registrar from '../../../mixins/registrar'
+import tooltipParent from '../../../mixins/tooltipParent'
 import { supportGridIndexComps } from '../../../configs'
 
 export default createComponent({
@@ -14,7 +15,16 @@ export default createComponent({
 
   chartComponentName: 'grid',
 
-  mixins: [base, zlevel, position, size, border, shadow, registrar],
+  mixins: [
+    base,
+    zlevel,
+    position,
+    size,
+    border,
+    shadow,
+    registrar,
+    tooltipParent,
+  ],
 
   props: {
     show: Boolean,
