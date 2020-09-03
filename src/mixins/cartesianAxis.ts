@@ -57,6 +57,11 @@ export default {
         EChartOption.BasicComponents.CartesianAxis.Label
       >,
     },
+    splitLine: {
+      type: Object as PropType<
+        EChartOption.BasicComponents.CartesianAxis.SplitLine
+      >,
+    },
     minorSplitLine: {
       type: Object as PropType<
         EChartOption.BasicComponents.CartesianAxis.MinorSplitLine
