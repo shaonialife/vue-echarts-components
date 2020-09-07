@@ -1,3 +1,13 @@
+<a name="0.0.17"></a>
+## [0.0.17](https://github.com/shaonialife/vue-echarts-components/compare/v0.0.16...v0.0.17) (2020-09-07)
+
+
+### Features
+
+* add series bar ([828f23a](https://github.com/shaonialife/vue-echarts-components/commit/828f23a))
+
+
+
 <a name="0.0.16"></a>
 ## [0.0.16](https://github.com/shaonialife/vue-echarts-components/compare/v0.0.15...v0.0.16) (2020-09-07)
 
