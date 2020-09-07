@@ -1,7 +1,7 @@
 {
   "framework": "vue",
   "name": "@shaonialife/vue-echarts-components",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "contributions": {
     "html": {
       "description-markup": "markdown",

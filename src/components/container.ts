@@ -106,34 +106,6 @@ export default createComponent({
     baseOption(option: EChartOption) {
       this.setOption(option)
     },
-
-    optionQueueVersion: debounce(function () {
-      if (this.$optionQueue.length === 0) {
-        return
-      }
-
-      try {
-        const copyOpts = this.$optionQueue.splice(0)
-        const res = mergeOption(this.$isFullyUpdate, this.$fullOption, copyOpts)
-        const fullyUpdate = this.$isFullyUpdate || res === this.$fullOption
-
-        if (fullyUpdate) {
-          // 在全量更新中 res 就是 this.$fullOption
-          this.childComponents.forEach(
-            (childComponent: ChartChildComponent) => {
-              childComponent.afterMergeOption(this.$fullOption)
-            }
-          )
-          // 全量更新
-          this.forceUpdateOption()
-        } else if (this.$chartInstance) {
-          // 增量更新
-          this.$chartInstance.setOption(res)
-        }
-      } finally {
-        this.$isFullyUpdate = false
-      }
-    }),
   },
 
   provide(this: any) {
@@ -167,6 +139,41 @@ export default createComponent({
         })
         this.optionQueueVersion += 1
       }
+    )
+
+    this.$watch(
+      () => this.optionQueueVersion,
+      debounce(() => {
+        if (this.$optionQueue.length === 0) {
+          return
+        }
+
+        try {
+          const copyOpts = this.$optionQueue.splice(0)
+          const res = mergeOption(
+            this.$isFullyUpdate,
+            this.$fullOption,
+            copyOpts
+          )
+          const fullyUpdate = this.$isFullyUpdate || res === this.$fullOption
+
+          if (fullyUpdate) {
+            // 在全量更新中 res 就是 this.$fullOption
+            ;(this as any).childComponents.forEach(
+              (childComponent: ChartChildComponent) => {
+                childComponent.afterMergeOption(this.$fullOption)
+              }
+            )
+            // 全量更新
+            this.forceUpdateOption()
+          } else if (this.$chartInstance) {
+            // 增量更新
+            this.$chartInstance.setOption(res)
+          }
+        } finally {
+          this.$isFullyUpdate = false
+        }
+      })
     )
   },
 
