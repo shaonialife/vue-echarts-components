@@ -1,3 +1,13 @@
+<a name="0.0.15"></a>
+## [0.0.15](https://github.com/shaonialife/vue-echarts-components/compare/v0.0.14...v0.0.15) (2020-09-07)
+
+
+### Features
+
+* add series pie ([526ecba](https://github.com/shaonialife/vue-echarts-components/commit/526ecba))
+
+
+
 <a name="0.0.14"></a>
 ## [0.0.14](https://github.com/shaonialife/vue-echarts-components/compare/v0.0.13...v0.0.14) (2020-09-03)
 
