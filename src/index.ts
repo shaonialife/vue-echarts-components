@@ -9,6 +9,7 @@ import {
   Tooltip,
   Toolbox,
   Line,
+  Bar,
   Pie,
 } from './components'
 import { Installable } from './types'
@@ -27,6 +28,7 @@ export default {
       Tooltip,
       Toolbox,
       Line,
+      Bar,
       Pie,
     ].forEach((comp: Installable<{}>) => {
       _Vue.use(comp)
