@@ -1,7 +1,7 @@
 {
   "framework": "vue",
   "name": "@shaonialife/vue-echarts-components",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "contributions": {
     "html": {
       "description-markup": "markdown",
@@ -774,6 +774,55 @@
               }
             },
             {
+              "name": "dimensions",
+              "value": {
+                "kind": "expression",
+                "type": "array"
+              }
+            },
+            {
+              "name": "encode",
+              "value": {
+                "kind": "expression",
+                "type": "object"
+              }
+            },
+            {
+              "name": "seriesLayoutBy",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "datasetIndex",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "markPoint",
+              "value": {
+                "kind": "expression",
+                "type": "object"
+              }
+            },
+            {
+              "name": "markLine",
+              "value": {
+                "kind": "expression",
+                "type": "object"
+              }
+            },
+            {
+              "name": "markArea",
+              "value": {
+                "kind": "expression",
+                "type": "object"
+              }
+            },
+            {
               "name": "coordinateSystem",
               "value": {
                 "kind": "expression",
@@ -919,6 +968,149 @@
                 "kind": "expression",
                 "type": "string"
               }
+            }
+          ],
+          "source": {
+            "module": "./src/components/chart/line.ts",
+            "symbol": "default"
+          }
+        },
+        {
+          "name": "VecSeriesPie",
+          "description": "",
+          "attributes": [
+            {
+              "name": "zlevel",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "z",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "name",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "data",
+              "value": {
+                "kind": "expression",
+                "type": "array"
+              }
+            },
+            {
+              "name": "silent",
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "animation",
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "animationThreshold",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "animationDuration",
+              "value": {
+                "kind": "expression",
+                "type": "number|func"
+              }
+            },
+            {
+              "name": "animationEasing",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "animationDelay",
+              "value": {
+                "kind": "expression",
+                "type": "number|func"
+              }
+            },
+            {
+              "name": "animationDurationUpdate",
+              "value": {
+                "kind": "expression",
+                "type": "number|func"
+              }
+            },
+            {
+              "name": "animationEasingUpdate",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "animationDelayUpdate",
+              "value": {
+                "kind": "expression",
+                "type": "number|func"
+              }
+            },
+            {
+              "name": "left",
+              "value": {
+                "kind": "expression",
+                "type": "number|string"
+              }
+            },
+            {
+              "name": "top",
+              "value": {
+                "kind": "expression",
+                "type": "number|string"
+              }
+            },
+            {
+              "name": "right",
+              "value": {
+                "kind": "expression",
+                "type": "number|string"
+              }
+            },
+            {
+              "name": "bottom",
+              "value": {
+                "kind": "expression",
+                "type": "number|string"
+              }
+            },
+            {
+              "name": "width",
+              "value": {
+                "kind": "expression",
+                "type": "string|number"
+              }
+            },
+            {
+              "name": "height",
+              "value": {
+                "kind": "expression",
+                "type": "string|number"
+              }
             },
             {
               "name": "dimensions",
@@ -968,10 +1160,143 @@
                 "kind": "expression",
                 "type": "object"
               }
+            },
+            {
+              "name": "hoverAnimation",
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "legendHoverLink",
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "hoverOffset",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "selectedMode",
+              "value": {
+                "kind": "expression",
+                "type": "boolean | 'single' | 'multiple'"
+              }
+            },
+            {
+              "name": "selectedOffset",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "clockwise",
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "startAngle",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "minAngle",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "minShowLabelAngle",
+              "value": {
+                "kind": "expression",
+                "type": "number"
+              }
+            },
+            {
+              "name": "roseType",
+              "value": {
+                "kind": "expression",
+                "type": "boolean | 'radius' | 'area'"
+              }
+            },
+            {
+              "name": "avoidLabelOverlap",
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "stillShowZeroSum",
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "cursor",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "label",
+              "value": {
+                "kind": "expression",
+                "type": "object"
+              }
+            },
+            {
+              "name": "labelLine",
+              "value": {
+                "kind": "expression",
+                "type": "object"
+              }
+            },
+            {
+              "name": "itemStyle",
+              "value": {
+                "kind": "expression",
+                "type": "object"
+              }
+            },
+            {
+              "name": "emphasis",
+              "value": {
+                "kind": "expression",
+                "type": "object"
+              }
+            },
+            {
+              "name": "center",
+              "value": {
+                "kind": "expression",
+                "type": "[number | string, number, string]"
+              }
+            },
+            {
+              "name": "radius",
+              "value": {
+                "kind": "expression",
+                "type": "number | string | [number | string, number, string]"
+              }
             }
           ],
           "source": {
-            "module": "./src/components/chart/line.ts",
+            "module": "./src/components/chart/pie.ts",
             "symbol": "default"
           }
         },

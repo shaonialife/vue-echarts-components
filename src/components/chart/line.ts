@@ -3,13 +3,15 @@ import { createComponent } from '../../utils'
 import series from '../../mixins/series'
 import animation from '../../mixins/animation'
 import symbol from '../../mixins/symbol'
+import seriesDataset from '../../mixins/seriesDataset'
+import seriesMark from '../../mixins/seriesMark'
 
 export default createComponent({
   name: 'VecSeriesLine',
 
   chartComponentName: 'line',
 
-  mixins: [series, animation, symbol],
+  mixins: [series, animation, symbol, seriesDataset, seriesMark],
 
   props: {
     coordinateSystem: {
@@ -43,14 +45,5 @@ export default createComponent({
     sampling: {
       type: String as PropType<'average' | 'max' | 'min' | 'sum'>,
     },
-    dimensions: Array,
-    encode: Object,
-    seriesLayoutBy: {
-      type: String as PropType<'column' | 'row'>,
-    },
-    datasetIndex: Number,
-    markPoint: Object,
-    markLine: Object,
-    markArea: Object,
   },
 })
