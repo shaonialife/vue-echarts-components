@@ -1,3 +1,13 @@
+<a name="0.0.16"></a>
+## [0.0.16](https://github.com/shaonialife/vue-echarts-components/compare/v0.0.15...v0.0.16) (2020-09-07)
+
+
+### Bug Fixes
+
+* should update when multi VecContainer ([b42c920](https://github.com/shaonialife/vue-echarts-components/commit/b42c920))
+
+
+
 <a name="0.0.15"></a>
 ## [0.0.15](https://github.com/shaonialife/vue-echarts-components/compare/v0.0.14...v0.0.15) (2020-09-07)
 
