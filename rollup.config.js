@@ -53,11 +53,12 @@ function genConfig({ outFile, format, mode }) {
       globals: {
         vue: 'Vue',
         'echarts/lib/echarts': 'echarts',
+        'resize-detector': 'resizeDetector',
       },
       exports: 'named',
       name: format === 'umd' ? 'VueEchartsComponents' : undefined,
     },
-    external: ['vue', 'echarts/lib/echarts'],
+    external: ['vue', 'echarts/lib/echarts', 'resize-detector'],
     onwarn,
     plugins: [
       typescript({
