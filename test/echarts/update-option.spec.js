@@ -8,6 +8,7 @@ describe('update-option', () => {
         <vec-container
           ref="container"
           style="width: 100px; height: 100px;"
+          animation
         >
           <vec-title :text="title" />
           <vec-title :text="title + '0'" />
@@ -25,11 +26,12 @@ describe('update-option', () => {
   it('should works', async () => {
     const { vm } = wrapper
 
-    expect(vm.$refs.container.$fullOption).toEqual({})
+    expect(vm.$refs.container.$fullOption).toEqual({ animation: true })
 
     await sleep()
 
     expect(vm.$refs.container.$fullOption).toEqual({
+      animation: true,
       title: [
         {
           id: 'vec-0',
@@ -57,6 +59,7 @@ describe('update-option', () => {
     await sleep()
 
     expect(vm.$refs.container.$fullOption).toEqual({
+      animation: true,
       title: [
         {
           id: 'vec-0',

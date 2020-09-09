@@ -22,7 +22,7 @@ export default {
         let opt = removeUndefined(this.$props)
         // 有可能 this.$props 中没有 undefined 值
         if (opt === this.$props) {
-          opt = { ...opt }
+          opt = Object.assign({}, opt)
         }
         opt.type = this.$options.chartComponentName
         return {

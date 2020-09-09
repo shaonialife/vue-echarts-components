@@ -1,7 +1,7 @@
 {
   "framework": "vue",
   "name": "@shaonialife/vue-echarts-components",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "contributions": {
     "html": {
       "description-markup": "markdown",
@@ -2149,6 +2149,10 @@
           "slots": [
             {
               "name": "default"
+            },
+            {
+              "name": "formatter",
+              "description": ""
             }
           ],
           "source": {

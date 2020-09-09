@@ -19,7 +19,18 @@
         saveAsImage: {},
       }"
     />
-    <vec-tooltip trigger="axis" />
+    <vec-tooltip trigger="axis" enterable>
+      <template #formatter="params">
+        <div v-if="params.length">{{ params[0].name }}</div>
+        <div
+          v-for="(param, idx) of params"
+          :key="idx"
+        >
+          <span v-html="param.marker" />
+          {{ param.seriesName }}: {{ param.data }}
+        </div>
+      </template>
+    </vec-tooltip>
     <vec-grid
       left="3%"
       right="4%"

@@ -75,7 +75,7 @@ export function removeUndefined<T>(value: T): T {
         const newItem = removeUndefined(item)
         if (item !== newItem) {
           if (newArr === value) {
-            newArr = [...value] as any
+            newArr = value.slice(0) as any
           }
           newArr[i] = newItem
         }
@@ -92,13 +92,13 @@ export function removeUndefined<T>(value: T): T {
         const newVal = removeUndefined(v)
         if (newVal !== v) {
           if (newObj === value) {
-            newObj = { ...value }
+            newObj = Object.assign({}, value)
           }
           ;(newObj as any)[key] = newVal
         }
       } else {
         if (newObj === value) {
-          newObj = { ...value }
+          newObj = Object.assign({}, value)
         }
         delete (newObj as any)[key]
       }

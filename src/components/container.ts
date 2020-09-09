@@ -58,29 +58,30 @@ export default createComponent({
 
   computed: {
     baseOption() {
-      return [
-        ...Object.keys(animation.props),
-        'color',
-        'backgroundColor',
-        'blendMode',
-        'hoverLayerThreshold',
-        ['useUtc', 'useUTC'], // alias
-      ].reduce((res, prop) => {
-        let optName
-        let propName
-        if (typeof prop === 'string') {
-          propName = prop
-          optName = prop
-        } else {
-          propName = prop[0]
-          optName = prop[1]
-        }
-        const val = (this as any)[propName]
-        if (val !== undefined) {
-          ;(res as any)[optName] = val
-        }
-        return res
-      }, {} as EChartOption)
+      return (Object.keys(animation.props) as (string | [string, string])[])
+        .concat([
+          'color',
+          'backgroundColor',
+          'blendMode',
+          'hoverLayerThreshold',
+          ['useUtc', 'useUTC'], // alias
+        ])
+        .reduce((res, prop) => {
+          let optName
+          let propName
+          if (typeof prop === 'string') {
+            propName = prop
+            optName = prop
+          } else {
+            propName = prop[0]
+            optName = prop[1]
+          }
+          const val = (this as any)[propName]
+          if (val !== undefined) {
+            ;(res as any)[optName] = val
+          }
+          return res
+        }, {} as EChartOption)
     },
   },
 
@@ -121,22 +122,23 @@ export default createComponent({
     this.$optionQueue = []
 
     this.$watch(
-      () =>
-        [
-          (this as any).childComponents as ChartChildComponent[],
-          this.optionVersion,
-        ] as const,
-      ([children]) => {
+      () => [
+        (this as any).childComponents as ChartChildComponent[],
+        this.optionVersion,
+      ],
+      () => {
         if (this.$optionQueue.length !== 0) {
           // 清空队列
           this.$optionQueue.splice(0)
         }
 
         this.$isFullyUpdate = true
-        this.$fullOption = { ...this.baseOption }
-        children.forEach((child) => {
-          this.$optionQueue.push(child.getSubOption)
-        })
+        this.$fullOption = Object.assign({}, this.baseOption)
+        ;((this as any).childComponents as ChartChildComponent[]).forEach(
+          (child) => {
+            this.$optionQueue.push(child.getSubOption)
+          }
+        )
         this.optionQueueVersion += 1
       }
     )

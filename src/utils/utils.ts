@@ -59,9 +59,9 @@ export function normalizeToArray<T>(value: T): UnwrapArray<NonNullable<T>>[] {
   return (Array.isArray(value) ? value : value == null ? [] : [value]) as any
 }
 
-export function microtaskDebounce<
-  F extends (this: any, ...args: any[]) => void
->(func: F): F {
+type FN = (this: any, ...args: any[]) => void
+
+export function microtaskDebounce<F extends FN>(func: F): F {
   let promise: Promise<void> | undefined
   let lock = false
   let newestArgs: any[] | undefined
@@ -90,10 +90,7 @@ export function microtaskDebounce<
   } as F
 }
 
-export function debounce<F extends (this: any, ...args: any[]) => void>(
-  func: F,
-  ms = 0
-): F {
+export function debounce<F extends FN>(func: F, ms = 0): F {
   let timeoutId: any
   let newestCtx: any
   let newestArgs: any[] | undefined
@@ -113,5 +110,41 @@ export function debounce<F extends (this: any, ...args: any[]) => void>(
 
       func.apply(ctx, args!)
     }, ms)
+  } as F
+}
+
+export function throttle<F extends FN>(func: F, ms = 0): F {
+  let flag = false
+  let newestCtx: any
+  let newestArgs: any[] | undefined
+
+  const callFn = () => {
+    const ctx = newestCtx
+    const args = newestArgs
+
+    newestCtx = undefined
+    newestArgs = undefined
+
+    func.apply(ctx, args!)
+  }
+
+  const resetFlag = () => {
+    if (newestArgs) {
+      setTimeout(resetFlag, ms)
+      callFn()
+    } else {
+      flag = false
+    }
+  }
+
+  return function newFn(this: any, ...args: any[]) {
+    newestCtx = this
+    newestArgs = args
+
+    if (!flag) {
+      flag = true
+      setTimeout(resetFlag, ms)
+      callFn()
+    }
   } as F
 }
