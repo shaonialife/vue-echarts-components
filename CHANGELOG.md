@@ -1,3 +1,13 @@
+<a name="0.0.19"></a>
+## [0.0.19](https://github.com/shaonialife/vue-echarts-components/compare/v0.0.18...v0.0.19) (2020-09-09)
+
+
+### Features
+
+* add slot(formatter) to tooltip ([7018501](https://github.com/shaonialife/vue-echarts-components/commit/7018501))
+
+
+
 <a name="0.0.18"></a>
 ## [0.0.18](https://github.com/shaonialife/vue-echarts-components/compare/v0.0.17...v0.0.18) (2020-09-07)
 
